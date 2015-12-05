@@ -1,0 +1,22 @@
+松屋プラグイン
+
+* これなん
+  自分が松屋に行ったり、人を松屋にぶち込むことができます
+* インストール方法
+  以下のコマンドを実行してください。
+
+#+BEGIN_SRC sh
+  $ mkdir -p ~/.mikutter/plugin/; git clone https://github.com/toshia/matsuyatter.git ~/.mikutter/plugin/matsuyatter/;
+#+END_SRC
+
+  それから =bundle install= で必要なgemをインストールしてください。bundlerを使ってない人は、
+
+#+BEGIN_SRC sh
+  $ gem install matsuya
+#+END_SRC
+
+  です
+* 使い方
+  投稿テキストボックスを右クリックすると「松屋へ行く」というメニューが表示されます。クリックするとメニューを勝手に投稿します。
+
+  ツイートを右クリックすると「松屋に拉致する」が出てきます。クリックすると相手に松屋のメニューみたいな文字列を勝手にリプライします。
