@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 require 'matsuya'
 
 Plugin.create(:matsuyatter) do
@@ -7,7 +8,7 @@ Plugin.create(:matsuyatter) do
           condition: lambda{ |opt| true },
           visible: true,
           role: :postbox) do |opt|
-    Service.primary.post(message: Matsuya.order)
+    compose(opt.world, body: Matsuya.order)
   end
 
   command(:matsuyatter_abduction,
@@ -16,7 +17,7 @@ Plugin.create(:matsuyatter) do
           visible: true,
           role: :timeline) do |opt|
     opt.messages.each do |m|
-      m.post(message: "@#{m.user.idname} #{Matsuya.order}")
+      compose(opt.world, m, body: "@#{m.user.idname} #{Matsuya.order}")
     end
   end
 end
